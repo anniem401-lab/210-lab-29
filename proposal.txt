@@ -1,0 +1,13 @@
+Project overview:
+This project simulates the operation of a cookie factory over 25 time periods. 
+Each time period a cycle of cookies being baked, stored, and sold. 
+The program will keep track of the baking, packaging, and the selling of cookies.
+
+Implementation:
+An std::map will be used to represent different departments in the cookie factory. 
+The key will be the department name. We will have a list for ingredients, 
+cookie batches, and employees which define the map value with an array of lists.
+
+Simulated events:
+The random events may include baking new batches, consumption of ingredients/updating 
+stock, and packed cookies for sale for each production cycle. 
