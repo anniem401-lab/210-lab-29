@@ -37,15 +37,13 @@ int main (){
         cout << "Error opening file." << endl; // Outputs error
         return 1; // Exits program
     }
-    // Else: Ingredients, cookies, and employees are read from each line.
+    // Else: Ingredients, cookies, and employees are read from each line while in file.
 
-    // Closing file...
+    // Closing file after data is read...
     file.close();
     // file closed
 
-    // factory_sim(map)
-
-    cout << "**Factory Stats**\n" ;
+    cout << "** Factory Stats **\n" ;
     cout << "Ingredients: ";
     cout << "Cookies: ";
     cout << "Employees: ";
@@ -54,16 +52,21 @@ int main (){
     // For 25 intervals, interate through each department in the map and simulate changes
     factory_sim(factory, 25);
     
-    // Random events that may impact the factory:
+    // Random events that may impact the factory during simulation which are defined in factory_sim:
     // Hired/fired worker, new cookie batches, change in stock, cookies packed, etc...
+    // New factory stats are outputted at the end of each interval.
+    cout << "** New Factory Stats **\n";
+    cout << "Cookies produced: ";
+    // etc...
 
     // Wait or pause breifly to simulate the passage of time between intervals
 
-    // End of main function
+    // End of main function and simulation of the factory
+    return 0;
 }
 
 // Void function definition to simulate factory
-/* void factory_sim(map){
+void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
     // void program defining the factory 
+    // The random events occur in the factory and intervals are counted until 25 is reached.
 }
-*/
