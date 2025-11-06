@@ -26,7 +26,7 @@ int main (){
 // If file doesn't open, output error and close out.
 // Else: Ingredients, cookies, and employees are read from each line.
 
-// Close file
+// Closing file
 
 // Time-based simulation for factory starts
 // For 25 intervals, interate through each department in the map and simulate changes
