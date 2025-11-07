@@ -64,10 +64,10 @@ int main (){
     file.close();
     // file closed
 
-    cout << "** Factory Stats **\n";
+    cout << "** Initial Factory Stats **\n";
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
-        cout << "Department: " << dept.first << "\n";
+        cout << "\nDepartment: " << dept.first << "\n";
         cout << " Features: ";
         for (const auto &ing : dept.second[0]){
             cout << ing << " ";
@@ -80,7 +80,7 @@ int main (){
         for (const auto &emp : dept.second[2]){
             cout << emp << " ";
         }
-        cout << "\n\n";
+        cout << "\n-------------------------\n";
     }
 
     // Time-based simulation for factory starts
@@ -90,13 +90,20 @@ int main (){
     // Random events that may impact the factory during simulation which are defined in factory_sim:
     // Hired/fired worker, new cookie batches, change in stock, cookies packed, etc...
     // New factory stats are outputted at the end of each interval.
-    cout << "** New Factory Stats **\n";
-    cout << "Cookies produced: \n";
+    cout << "\n\n** New Factory Stats **\n";
+    for (const auto &dept : factory){
+        cout << "\nDepartment: " << dept.first << "\n";
+        cout << "Cookies produced: " << dept.second[1].size() << "\n";
+        cout << "Employees: " << dept.second[2].size() << "\n";
+        cout << "Ingredient stock: " << dept.second[0].size() << "\n";
+        cout << "-------------------------";
+    }
     // etc...
 
     // Wait or pause breifly to simulate the passage of time between intervals
 
     // End of main function and simulation of the factory
+    cout << "\nEnd of simulation!\n";
     return 0;
 }
 
