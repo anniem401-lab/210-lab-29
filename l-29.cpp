@@ -32,21 +32,42 @@ int main (){
     // Open an external file to read data about the facotry and popoulate the map
     // Opening file "factory_data.txt"...
     // If file doesn't open, output error and close out.
+    cout << "\nOpening factory data and reading through lines...\n";
     ifstream file("factory_data.txt");
     if (!file){
         cout << "Error opening file." << endl; // Outputs error
         return 1; // Exits program
     }
     // Else: Ingredients, cookies, and employees are read from each line while in file.
+    string department;
+    while (getline(file, department)){
+        array<list<string>, 3> data; // array of lists for ingredients, cookies, employees
+        string ingredient, cookie, employee;
 
+        // Read ingredients
+        getline(file, ingredient);
+        data[0].push_back(ingredient);
+
+        // Read cookies
+        getline(file, cookie);
+        data[1].push_back(cookie);
+
+        // Read employees
+        getline(file, employee);
+        data[2].push_back(employee);
+
+        // Populate the map with department as key and data array as value
+        factory[department] = data;
+    }
+    cout << "File has been read and will now close...\n\n";
     // Closing file after data is read...
     file.close();
     // file closed
 
-    cout << "** Factory Stats **\n" ;
-    cout << "Ingredients: ";
-    cout << "Cookies: ";
-    cout << "Employees: ";
+    cout << "** Factory Stats **\n";
+    cout << "Ingredients: \n";
+    cout << "Cookies: \n";
+    cout << "Employees: \n\n";
 
     // Time-based simulation for factory starts
     // For 25 intervals, interate through each department in the map and simulate changes
@@ -56,7 +77,7 @@ int main (){
     // Hired/fired worker, new cookie batches, change in stock, cookies packed, etc...
     // New factory stats are outputted at the end of each interval.
     cout << "** New Factory Stats **\n";
-    cout << "Cookies produced: ";
+    cout << "Cookies produced: \n";
     // etc...
 
     // Wait or pause breifly to simulate the passage of time between intervals
