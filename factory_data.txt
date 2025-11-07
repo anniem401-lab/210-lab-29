@@ -1,10 +1,12 @@
-Baking ingredient flour
-Baking ingredient sugar
-Baking cookie choclate_chip
-Baking employee baker1
-Packaging ingredient boxes
-Packaging cookie chocolate_chip
-Packaging employee packer1
-Sales ingredient labels
-Sales cookie chocolate_chip
-Sales employee clerk1
+Baking 
+flour sugar eggs butter salt chocolate-chips
+chocolate-chip
+baker1
+Packaging
+boxes
+chocolate-chip
+packer1
+Sales 
+labels
+chocolate-chip
+clerk1

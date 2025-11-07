@@ -1,4 +1,4 @@
-// COMSC 210 | Lab 29 | Annie Morales
+// COMSC 210 | Lab 29 + 30 | Annie Morales
 // IDE used: Visual Studio Code
 
 // Include necessary headers for file handling, map, array, list, data structures, etc.
@@ -65,9 +65,23 @@ int main (){
     // file closed
 
     cout << "** Factory Stats **\n";
-    cout << "Ingredients: \n";
-    cout << "Cookies: \n";
-    cout << "Employees: \n\n";
+    // Will out put three departments: baking, packaging, sales
+    for (const auto &dept : factory){
+        cout << "Department: " << dept.first << "\n";
+        cout << " Features: ";
+        for (const auto &ing : dept.second[0]){
+            cout << ing << " ";
+        }
+        cout << "\n Cookies: ";
+        for (const auto &cook : dept.second[1]){
+            cout << cook << " ";
+        }
+        cout << "\n Employees: ";
+        for (const auto &emp : dept.second[2]){
+            cout << emp << " ";
+        }
+        cout << "\n\n";
+    }
 
     // Time-based simulation for factory starts
     // For 25 intervals, interate through each department in the map and simulate changes
