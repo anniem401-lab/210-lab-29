@@ -27,15 +27,26 @@ int main (){
     srand(time(0));
     map<string, array<list<string>, 3>> factory; // map of factory
 
-    // Open an external file to read data about the facotry and popoulate the map
-    // Opening file "factory_data.txt"...
-    // If file doesn't open, output error and close out.
+    map<string, array<list<string>, 3>> testFactory;
+    // code to test factory...
+    array<list<string>, 3> testData;
+    testData[0].push_back("ingredient_test1");
+    testData[1].push_back("cookie_test1");
+    testData[2].push_back("employee_test1");
+    testFactory["Test Department"] = testData;
+
+    cout << "\n** Initial Test Factory Stats **\n";
+    cout << "\nItems: ";
+    cout << "\nCookies: ";
+    cout << "\nEmployees: ";
+
+    /*
     ifstream file("factory_data.txt");
     if (!file){
         cout << "Error opening file." << endl; // Outputs error
         return 1; // Exits program
     }
-    
+
     string department;
     while (getline(file, department)){
         array<list<string>, 3> data; // array of lists for ingredients, cookies, employees
@@ -58,6 +69,7 @@ int main (){
     }
     //cout << "File has been read and will now close...\n\n";
     file.close();
+    */
 
     cout << "\n** Initial Factory Stats **\n";
     // Will out put three departments: baking, packaging, sales

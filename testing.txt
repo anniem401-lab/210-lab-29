@@ -20,6 +20,33 @@ using namespace std;
 // Function prototype
 void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
 
+// Main function
+int main (){
+    srand(time(0));
+    map<string, array<list<string>, 3>> factory; // map of factory
+
+    map<string, array<list<string>, 3>> testFactory;
+    // code to test factory...
+    array<list<string>, 3> testData;
+    testData[0].push_back("ingredient_test1");
+    testData[1].push_back("cookie_test1");
+    testData[2].push_back("employee_test1");
+    testFactory["Test Department"] = testData;
+
+    cout << "\n** Initial Factory Stats **\n";
+    cout << "\nItems: ";
+    cout << "\nCookies: ";
+    cout << "\nEmployees: ";
+
+    // Run simulation for five intervals
+    factory_sim(factory, 5);
+
+    cout << "\n\n** New Factory Stats **\n";
+
+    cout << "\nTesting is done.\n";
+    return 0;
+}
+
 // factory_sim definition
 void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
     cout << "\n\n** Simulating 25 Factory Cycles **";
@@ -57,23 +84,4 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
             }
         }
     }
-}
-
-// Main function
-int main (){
-    srand(time(0));
-    map<string, array<list<string>, 3>> factory; // map of factory
-
-    ifstream file("factory_data.txt");
-    if (!file){
-        cout << "Error opening file." << endl; // Outputs error
-        return 1; // Exits program
-    }
-
-    map<string, array<list<string>, 3>> testFactory;
-
-    // code to test factory...
-
-    // Run simulation for five intervals
-    factory_sim(factory, 5);
 }
