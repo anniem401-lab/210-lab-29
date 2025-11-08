@@ -23,7 +23,6 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
 // Main function
 int main (){
     srand(time(0));
-    map<string, array<list<string>, 3>> factory; // map of factory
 
     map<string, array<list<string>, 3>> testFactory;
     // code to test factory...
@@ -33,15 +32,27 @@ int main (){
     testData[2].push_back("employee_test1");
     testFactory["Test Department"] = testData;
 
-    cout << "\n** Initial Factory Stats **\n";
+    cout << "\n** Initial Test Factory Stats **\n";
     cout << "\nItems: ";
+    for (const auto &item : testFactory["Test Department"][0]){
+        cout << item << " ";
+    }
     cout << "\nCookies: ";
+    for (const auto &cookie : testFactory["Test Department"][1]){
+        cout << cookie << " ";
+    }
     cout << "\nEmployees: ";
+    for (const auto &employee : testFactory["Test Department"][2]){
+        cout << employee << " ";
+    }
 
     // Run simulation for five intervals
-    factory_sim(factory, 5);
+    factory_sim(testfactory, 5);
 
-    cout << "\n\n** New Factory Stats **\n";
+    cout << "\n\n** New Test Factory Stats **\n";
+    cout << "Items left: " << testFactory["Test Department"][0].size(); 
+    cout << "\nCookies produced: " << testFactory["Test Department"][1].size(); 
+    cout << "\nEmployees: " << testFactory["Test Department"][2].size() << "\n";
 
     cout << "\nTesting is done.\n";
     return 0;

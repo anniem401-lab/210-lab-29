@@ -37,8 +37,17 @@ int main (){
 
     cout << "\n** Initial Test Factory Stats **\n";
     cout << "\nItems: ";
+    for (const auto &item : testFactory["Test Department"][0]){
+        cout << item << " ";
+    }
     cout << "\nCookies: ";
+    for (const auto &cookie : testFactory["Test Department"][1]){
+        cout << cookie << " ";
+    }
     cout << "\nEmployees: ";
+    for (const auto &employee : testFactory["Test Department"][2]){
+        cout << employee << " ";
+    }
 
     /*
     ifstream file("factory_data.txt");
@@ -71,6 +80,7 @@ int main (){
     file.close();
     */
 
+    /*
     cout << "\n** Initial Factory Stats **\n";
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
@@ -89,10 +99,17 @@ int main (){
         }
         cout << "\n-------------------------\n";
     }
+    */
 
     // Time-based simulation for factory starts
     // For 25 intervals, interate through each department in the map and simulate changes
-    factory_sim(factory, 25);
+    factory_sim(factory, 5);
+
+    cout << "\n\n** New Test Factory Stats **\n";
+    cout << "Items left: " << testFactory["Test Department"][0].size(); 
+    cout << "\nCookies produced: " << testFactory["Test Department"][1].size(); 
+    cout << "\nEmployees: " << testFactory["Test Department"][2].size() << "\n";
+
     
     // Random events that may impact the factory during simulation which are defined in factory_sim:
     // Hired/fired worker, new cookie batches, change in stock, cookies packed, etc...
