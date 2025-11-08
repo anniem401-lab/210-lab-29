@@ -11,13 +11,11 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
-// Including additional headers that may need to be addded
 using namespace std;
 
 // A function defined to simulate a factory changing each production cycle
 // Parameters: map of departments, number of intervals
 // Function prototype
-// Void function to simulate factory: 
 void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
 
 // Define main function
@@ -68,7 +66,7 @@ int main (){
         cout << "\nDepartment: " << dept.first << "\n";
         cout << " Items: ";
         for (const auto &ing : dept.second[0]){
-            cout << ing << " ";
+            cout << ing << " " ;
         }
         cout << "\n Cookies: ";
         for (const auto &cook : dept.second[1]){
@@ -97,11 +95,9 @@ int main (){
         cout << "-------------------------";
     }
     // etc...
-
     // Wait or pause breifly to simulate the passage of time between intervals
-
     // End of main function and simulation of the factory
-    cout << "\nEnd of simulation!\n\n";
+    cout << "\nEnd of simulation after 25 cycles!\n\n";
     return 0;
 }
 
@@ -132,6 +128,14 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
                 case 2: // Hire new employee
                 dept.second[2].push_back("employee_" + to_string(i));
                 cout << "New employee hired in " << dept.first << " department.\n";
+                    break;
+                case 3: // Firing employees
+                if (!dept.second[2].empty()){
+                    dept.second[2].pop_back();
+                    cout << "An employee was let go in " << dept.first << " department.\n";
+                } else {
+                    cout << dept.first << ": No employees to let go!\n";
+                }
                     break;
             }
         }

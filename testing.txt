@@ -1,0 +1,5 @@
+Description for use of unit testing to test function for main:
+void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
+
+The function above simulates the factory using a map with arrays in the parameter,
+along with the interval that represents each factory cycle.
