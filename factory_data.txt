@@ -1,4 +1,4 @@
-Baking 
+Baking
 flour sugar eggs butter salt chocolate-chips
 chocolate-chip
 baker1
@@ -6,7 +6,7 @@ Packaging
 boxes
 chocolate-chip
 packer1
-Sales 
+Sales
 labels
 chocolate-chip
 clerk1

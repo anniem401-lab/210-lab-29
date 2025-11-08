@@ -60,15 +60,13 @@ int main (){
         factory[department] = data;
     }
     cout << "File has been read and will now close...\n\n";
-    // Closing file after data is read...
     file.close();
-    // file closed
 
     cout << "** Initial Factory Stats **\n";
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
         cout << "\nDepartment: " << dept.first << "\n";
-        cout << " Features: ";
+        cout << " Items: ";
         for (const auto &ing : dept.second[0]){
             cout << ing << " ";
         }
@@ -103,7 +101,7 @@ int main (){
     // Wait or pause breifly to simulate the passage of time between intervals
 
     // End of main function and simulation of the factory
-    cout << "\nEnd of simulation!\n";
+    cout << "\nEnd of simulation!\n\n";
     return 0;
 }
 
@@ -111,6 +109,7 @@ int main (){
 void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
     // void program defining the factory 
     // The random events occur in the factory and intervals are counted until 25 is reached.
+    cout << "\n\n** Simulating 25 cycles **";
     for (int i = 1; i <= interval; ++i){
         cout << "\n\n --- Factory Cycle " << i << " ---\n";
 
@@ -120,10 +119,20 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
             switch (event){
                 case 0: // New cookie batch produced
                     dept.second[1].push_back("cookie_batch_" + to_string(i));
-                    cout << "New cookie batch produced in " << dept.first << " department.\n";
+                    cout << "New cookie batch in " << dept.first << " department.\n";
                     break;
-                //case 1: // Ingredients used
-
+                case 1: // Ingredients used
+                if (!dept.second[0].empty()){
+                    dept.second[0].pop_back();
+                    cout << "Items used in " << dept.first << " department.\n";
+                } else {
+                    cout << dept.first << ": No more items available!\n";
+                }
+                    break;
+                case 2: // Hire new employee
+                dept.second[2].push_back("employee_" + to_string(i));
+                cout << "New employee hired in " << dept.first << " department.\n";
+                    break;
             }
         }
     }
