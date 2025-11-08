@@ -30,7 +30,7 @@ int main (){
     // Open an external file to read data about the facotry and popoulate the map
     // Opening file "factory_data.txt"...
     // If file doesn't open, output error and close out.
-    cout << "\nOpening factory data and reading through lines...\n";
+    //cout << "\nOpening factory data and reading through lines...\n";
     ifstream file("factory_data.txt");
     if (!file){
         cout << "Error opening file." << endl; // Outputs error
@@ -57,10 +57,10 @@ int main (){
         // Populate the map with department as key and data array as value
         factory[department] = data;
     }
-    cout << "File has been read and will now close...\n\n";
+    //cout << "File has been read and will now close...\n\n";
     file.close();
 
-    cout << "** Initial Factory Stats **\n";
+    cout << "\n** Initial Factory Stats **\n";
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
         cout << "\nDepartment: " << dept.first << "\n";
@@ -91,7 +91,7 @@ int main (){
         cout << "\nDepartment: " << dept.first << "\n";
         cout << "Cookies produced: " << dept.second[1].size() << "\n";
         cout << "Employees: " << dept.second[2].size() << "\n";
-        cout << "Ingredient stock: " << dept.second[0].size() << "\n";
+        cout << "Item stock: " << dept.second[0].size() << "\n";
         cout << "-------------------------";
     }
     // etc...
@@ -105,7 +105,7 @@ int main (){
 void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
     // void program defining the factory 
     // The random events occur in the factory and intervals are counted until 25 is reached.
-    cout << "\n\n** Simulating 25 cycles **";
+    cout << "\n\n** Simulating 25 Factory Cycles **";
     for (int i = 1; i <= interval; ++i){
         cout << "\n\n --- Factory Cycle " << i << " ---\n";
 
@@ -117,7 +117,7 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
                     dept.second[1].push_back("cookie_batch_" + to_string(i));
                     cout << "New cookie batch in " << dept.first << " department.\n";
                     break;
-                case 1: // Ingredients used
+                case 1: // Items used
                 if (!dept.second[0].empty()){
                     dept.second[0].pop_back();
                     cout << "Items used in " << dept.first << " department.\n";

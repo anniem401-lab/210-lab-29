@@ -2,6 +2,7 @@
     "files.associations": {
         "map": "cpp",
         "xstring": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "list": "cpp"
     }
 }
