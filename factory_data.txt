@@ -1,0 +1,12 @@
+Baking
+flour sugar eggs butter salt chocolate-chips
+chocolate-chip
+baker1 baker 2
+Packaging
+boxes tape wrappers
+chocolate-chip
+packer1 packer 2
+Sales
+labels flyers tags stickers
+chocolate-chip
+clerk1 clerk2

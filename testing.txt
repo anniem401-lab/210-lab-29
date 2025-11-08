@@ -1,0 +1,98 @@
+Description for use of unit testing to test function for main:
+void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
+
+The function above simulates the factory using a map with arrays in the parameter,
+along with the interval that represents each factory cycle.
+
+Unit Testing with short driver program:
+// Headers
+#include <array>
+#include <iostream>
+#include <iomanip>
+#include <map>
+#include <list>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+// Function prototype
+void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
+
+// Main function
+int main (){
+    srand(time(0));
+
+    map<string, array<list<string>, 3>> testFactory;
+    // code to test factory...
+    array<list<string>, 3> testData;
+    testData[0].push_back("ingredient_test1");
+    testData[1].push_back("cookie_test1");
+    testData[2].push_back("employee_test1");
+    testFactory["Test Department"] = testData;
+
+    cout << "\n** Initial Test Factory Stats **\n";
+    cout << "\nItems: ";
+    for (const auto &item : testFactory["Test Department"][0]){
+        cout << item << " ";
+    }
+    cout << "\nCookies: ";
+    for (const auto &cookie : testFactory["Test Department"][1]){
+        cout << cookie << " ";
+    }
+    cout << "\nEmployees: ";
+    for (const auto &employee : testFactory["Test Department"][2]){
+        cout << employee << " ";
+    }
+
+    // Run simulation for five intervals
+    factory_sim(testfactory, 5);
+
+    cout << "\n\n** New Test Factory Stats **\n";
+    cout << "Items left: " << testFactory["Test Department"][0].size(); 
+    cout << "\nCookies produced: " << testFactory["Test Department"][1].size(); 
+    cout << "\nEmployees: " << testFactory["Test Department"][2].size() << "\n";
+
+    cout << "\nTesting is done.\n";
+    return 0;
+}
+
+// factory_sim definition
+void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
+    cout << "\n\n** Simulating 25 Factory Cycles **";
+    for (int i = 1; i <= interval; ++i){
+        cout << "\n\n --- Factory Cycle " << i << " ---\n";
+
+        for (auto &dept : factory){
+            int event = rand() % 4; // Picks a random event (0-3)
+
+            switch (event){
+                case 0: // New cookie batch produced
+                    dept.second[1].push_back("cookie_batch_" + to_string(i));
+                    cout << "New cookie batch in " << dept.first << " department.\n";
+                    break;
+                case 1: // Items used
+                if (!dept.second[0].empty()){
+                    dept.second[0].pop_back();
+                    cout << "Items used in " << dept.first << " department.\n";
+                } else {
+                    cout << dept.first << ": No more items available!\n";
+                }
+                    break;
+                case 2: // Hire new employee
+                dept.second[2].push_back("employee_" + to_string(i));
+                cout << "New employee hired in " << dept.first << " department.\n";
+                    break;
+                case 3: // Firing employees
+                if (!dept.second[2].empty()){
+                    dept.second[2].pop_back();
+                    cout << "An employee was let go in " << dept.first << " department.\n";
+                } else {
+                    cout << dept.first << ": No employees to let go!\n";
+                }
+                    break;
+            }
+        }
+    }
+}
