@@ -27,29 +27,6 @@ int main (){
     srand(time(0));
     map<string, array<list<string>, 3>> factory; // map of factory
 
-    map<string, array<list<string>, 3>> testFactory;
-    // code to test factory...
-    array<list<string>, 3> testData;
-    testData[0].push_back("ingredient_test1");
-    testData[1].push_back("cookie_test1");
-    testData[2].push_back("employee_test1");
-    testFactory["Test Department"] = testData;
-
-    cout << "\n** Initial Test Factory Stats **\n";
-    cout << "\nItems: ";
-    for (const auto &item : testFactory["Test Department"][0]){
-        cout << item << " ";
-    }
-    cout << "\nCookies: ";
-    for (const auto &cookie : testFactory["Test Department"][1]){
-        cout << cookie << " ";
-    }
-    cout << "\nEmployees: ";
-    for (const auto &employee : testFactory["Test Department"][2]){
-        cout << employee << " ";
-    }
-
-    /*
     ifstream file("factory_data.txt");
     if (!file){
         cout << "Error opening file." << endl; // Outputs error
@@ -78,9 +55,7 @@ int main (){
     }
     //cout << "File has been read and will now close...\n\n";
     file.close();
-    */
 
-    /*
     cout << "\n** Initial Factory Stats **\n";
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
@@ -99,16 +74,10 @@ int main (){
         }
         cout << "\n-------------------------\n";
     }
-    */
 
     // Time-based simulation for factory starts
     // For 25 intervals, interate through each department in the map and simulate changes
-    factory_sim(factory, 5);
-
-    cout << "\n\n** New Test Factory Stats **\n";
-    cout << "Items left: " << testFactory["Test Department"][0].size(); 
-    cout << "\nCookies produced: " << testFactory["Test Department"][1].size(); 
-    cout << "\nEmployees: " << testFactory["Test Department"][2].size() << "\n";
+    factory_sim(factory, 25);
 
     
     // Random events that may impact the factory during simulation which are defined in factory_sim:
