@@ -111,4 +111,20 @@ int main (){
 void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
     // void program defining the factory 
     // The random events occur in the factory and intervals are counted until 25 is reached.
+    for (int i = 1; i <= interval; ++i){
+        cout << "\n\n --- Factory Cycle " << i << " ---\n";
+
+        for (auto &dept : factory){
+            int event = rand() % 4; // Picks a random event (0-3)
+
+            switch (event){
+                case 0: // New cookie batch produced
+                    dept.second[1].push_back("cookie_batch_" + to_string(i));
+                    cout << "New cookie batch produced in " << dept.first << " department.\n";
+                    break;
+                //case 1: // Ingredients used
+
+            }
+        }
+    }
 }
