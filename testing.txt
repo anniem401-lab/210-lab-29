@@ -3,3 +3,77 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
 
 The function above simulates the factory using a map with arrays in the parameter,
 along with the interval that represents each factory cycle.
+
+Unit Testing with short driver program:
+// Headers
+#include <array>
+#include <iostream>
+#include <iomanip>
+#include <map>
+#include <list>
+#include <string>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+// Function prototype
+void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
+
+// factory_sim definition
+void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
+    cout << "\n\n** Simulating 25 Factory Cycles **";
+    for (int i = 1; i <= interval; ++i){
+        cout << "\n\n --- Factory Cycle " << i << " ---\n";
+
+        for (auto &dept : factory){
+            int event = rand() % 4; // Picks a random event (0-3)
+
+            switch (event){
+                case 0: // New cookie batch produced
+                    dept.second[1].push_back("cookie_batch_" + to_string(i));
+                    cout << "New cookie batch in " << dept.first << " department.\n";
+                    break;
+                case 1: // Items used
+                if (!dept.second[0].empty()){
+                    dept.second[0].pop_back();
+                    cout << "Items used in " << dept.first << " department.\n";
+                } else {
+                    cout << dept.first << ": No more items available!\n";
+                }
+                    break;
+                case 2: // Hire new employee
+                dept.second[2].push_back("employee_" + to_string(i));
+                cout << "New employee hired in " << dept.first << " department.\n";
+                    break;
+                case 3: // Firing employees
+                if (!dept.second[2].empty()){
+                    dept.second[2].pop_back();
+                    cout << "An employee was let go in " << dept.first << " department.\n";
+                } else {
+                    cout << dept.first << ": No employees to let go!\n";
+                }
+                    break;
+            }
+        }
+    }
+}
+
+// Main function
+int main (){
+    srand(time(0));
+    map<string, array<list<string>, 3>> factory; // map of factory
+
+    ifstream file("factory_data.txt");
+    if (!file){
+        cout << "Error opening file." << endl; // Outputs error
+        return 1; // Exits program
+    }
+
+    map<string, array<list<string>, 3>> testFactory;
+
+    // code to test factory...
+
+    // Run simulation for five intervals
+    factory_sim(factory, 5);
+}

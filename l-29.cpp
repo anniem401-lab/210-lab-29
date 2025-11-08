@@ -30,13 +30,12 @@ int main (){
     // Open an external file to read data about the facotry and popoulate the map
     // Opening file "factory_data.txt"...
     // If file doesn't open, output error and close out.
-    //cout << "\nOpening factory data and reading through lines...\n";
     ifstream file("factory_data.txt");
     if (!file){
         cout << "Error opening file." << endl; // Outputs error
         return 1; // Exits program
     }
-    // Else: Ingredients, cookies, and employees are read from each line while in file.
+    
     string department;
     while (getline(file, department)){
         array<list<string>, 3> data; // array of lists for ingredients, cookies, employees
@@ -94,8 +93,6 @@ int main (){
         cout << "Item stock: " << dept.second[0].size() << "\n";
         cout << "-------------------------";
     }
-    // etc...
-    // Wait or pause breifly to simulate the passage of time between intervals
     // End of main function and simulation of the factory
     cout << "\nEnd of simulation after 25 cycles!\n\n";
     return 0;
