@@ -6,23 +6,32 @@ butter
 salt
 chocolate-chips
 baking soda
+
 chocolate-chip
+
 baker1
 baker2
+baker3
 
 Packaging
 boxes
 tape
 wrappers
+
 chocolate-chip
+
 packer1
 packer2
+packer3
 
 Sales
 labels
 flyers
 tags
 stickers
+
 chocolate-chip
+
 clerk1
 clerk2
+clerk3

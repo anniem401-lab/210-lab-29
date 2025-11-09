@@ -40,16 +40,22 @@ int main (){
         string line;
 
         // Read each ingredient
-        while (getline(file, line) && !line.empty());
-        data[0].push_back(line);
+        while (getline(file, line) && !line.empty()){
+            if (line.empty()) break;
+            data[0].push_back(line);
+        }
 
         // Read cookies
-        while (getline(file, line) && !line.empty());
-        if (!file.eof()) data[1].push_back(line);
+        while (getline(file, line) && !line.empty()){
+            if (line.empty()) break;
+            data[1].push_back(line);
+        }
 
         // Read employees
-        while (getline(file, line) && !line.empty());
-        data[2].push_back(line);
+        while (getline(file, line) && !line.empty()){
+            if (line.empty()) break;
+            data[2].push_back(line);
+        }
 
         // Populate the map with department as key and data array as value
         factory[department] = data;
