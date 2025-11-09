@@ -1,37 +1,57 @@
 Baking
-flour
-sugar
-eggs
-butter
-salt
-chocolate-chips
-baking soda
+flour,
+sugar,
+eggs,
+butter,
+oil,
+salt,
+dark choco-chips,
+semi-sweet choco-chips,
+milk choco-chips,
+white choco-chips,
+ruby choco-chips,
+dairy-free choco-chips,
+baking soda,
+vanilla extract.
 
 chocolate-chip
 
 baker1
 baker2
 baker3
+baker4
+baker5
 
 Packaging
 boxes
 tape
 wrappers
+cardboard
+bubblewrap
+packing peanuts
 
 chocolate-chip
 
 packer1
 packer2
 packer3
+packer4
+packer5
 
 Sales
-labels
-flyers
-tags
-stickers
+labels,
+flyers,
+tags,
+stickers,
+brochures,
+product guide,
+promotional bags,
+promotional mugs,
 
 chocolate-chip
 
 clerk1
 clerk2
 clerk3
+clerk4
+clerk5

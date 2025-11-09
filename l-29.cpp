@@ -67,20 +67,20 @@ int main (){
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
         cout << "\nDepartment: " << dept.first << "\n";
-        cout << " Items: ";
+        cout << " Items: " << setw (12);
         for (const auto &ing : dept.second[0]){
             cout << ing << " " ;
         }
-        cout << "\n Cookies: ";
+        cout << "\n Cookies: " << setw (17);
         for (const auto &cook : dept.second[1]){
             cout << cook << " ";
         }
-        cout << "\n Employees: ";
+        cout << "\n Employees: " << setw (7);
         for (const auto &emp : dept.second[2]){
             cout << emp << " ";
         }
         cout << "\n-------------------------\n";
-    }
+    } //setw (5)
 
     // Time-based simulation for factory starts
     // For 25 intervals, interate through each department in the map and simulate changes
