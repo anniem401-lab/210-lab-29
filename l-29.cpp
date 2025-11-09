@@ -1,4 +1,4 @@
-// COMSC 210 | Lab 29 + 30 | Annie Morales
+// COMSC 210 | Lab 29 + 30 + 31 | Annie Morales
 // IDE used: Visual Studio Code
 
 // Include necessary headers for file handling, map, array, list, data structures, etc.
@@ -35,20 +35,21 @@ int main (){
 
     string department;
     while (getline(file, department)){
+        if (department.empty()) continue;
         array<list<string>, 3> data; // array of lists for ingredients, cookies, employees
-        string ingredient, cookie, employee;
+        string line;
 
-        // Read ingredients
-        getline(file, ingredient);
-        data[0].push_back(ingredient);
+        // Read each ingredient
+        while (getline(file, line) && !line.empty());
+        data[0].push_back(line);
 
         // Read cookies
-        getline(file, cookie);
-        data[1].push_back(cookie);
+        while (getline(file, line) && !line.empty());
+        if (!file.eof()) data[1].push_back(line);
 
         // Read employees
-        getline(file, employee);
-        data[2].push_back(employee);
+        while (getline(file, line) && !line.empty());
+        data[2].push_back(line);
 
         // Populate the map with department as key and data array as value
         factory[department] = data;
