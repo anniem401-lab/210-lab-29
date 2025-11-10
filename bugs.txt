@@ -1,2 +1,5 @@
 Bug 1: Text file was being read incorrectly due to previous format.
 Fix: Issue fixed with text file being reformatted and recoding to read lines properly.
+
+Bug 2: One of the random events wouldn't appear.
+Fix: Issue fixed by increasing the number of randomizer.

@@ -114,7 +114,7 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
         cout << "\n\n --- Factory Cycle " << i << " ---\n";
 
         for (auto &dept : factory){
-            int event = rand() % 5; // Picks a random event (0-4)
+            int event = rand() % 7; // Picks a random event (0-6)
 
             switch (event){
                 case 0: // New cookie batch produced
@@ -149,6 +149,11 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
                     cout << dept.first << ": No cookie batches to package!\n";
                 }
                     break;
+                case 5: // Random inspection
+                cout << "Random inspection in " << dept.first << " department. All good!\n";
+                    break;
+                case 6: // Error in department
+                cout << "A minor error has occured in " << dept.first << " department. Issue has been resolved after.\n";
             }
         }
     }
