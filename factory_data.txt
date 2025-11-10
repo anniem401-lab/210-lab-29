@@ -1,12 +1,100 @@
 Baking
-flour sugar eggs butter salt chocolate-chips
-chocolate-chip
-baker1 baker 2
+flour,
+sugar,
+eggs,
+butter,
+oil,
+salt,
+dark choco,
+semi-sweet choco,
+milk choco,
+white choco,
+ruby choco,
+dairy-free choco,
+baking soda,
+vanilla extract.
+
+dark choco,
+semi-sweet choco,
+milk choco,
+white choco,
+ruby choco,
+dairy-free choco,
+shortbread,
+butter,
+sugar.
+
+baker1,
+baker2,
+baker3,
+baker4,
+baker5,
+baker6,
+baker7.
+
 Packaging
-boxes tape wrappers
-chocolate-chip
-packer1 packer 2
+boxes,
+tape,
+wrappers,
+cardboard,
+bubble-wrap,
+packing peanuts,
+parchment paper,
+tins,
+wrappers,
+cartons,
+air pillows,
+decals,
+labels,
+foam inserts.
+
+dark choco,
+semi-sweet choco,
+milk choco,
+white choco,
+ruby choco,
+dairy-free choco,
+shortbread,
+butter,
+sugar.
+
+packer1,
+packer2,
+packer3,
+packer4,
+packer5,
+packer6,
+packer7.
+
 Sales
-labels flyers tags stickers
-chocolate-chip
-clerk1 clerk2
+labels,
+flyers,
+tags,
+stickers,
+brochures,
+product guides,
+promo bags,
+promo mugs,
+promo keychains,
+promo pens,
+promo stickers,
+promo pens,
+promo cups.
+
+dark choco,
+semi-sweet choco,
+milk choco,
+white choco,
+ruby choco,
+dairy-free choco,
+shortbread,
+butter,
+sugar.
+
+clerk1,
+clerk2,
+clerk3,
+clerk4,
+clerk5,
+clerk6,
+clerk7.
