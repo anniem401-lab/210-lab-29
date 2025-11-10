@@ -41,19 +41,16 @@ int main (){
 
         // Read each ingredient
         while (getline(file, line) && !line.empty()){
-            if (line.empty()) break;
             data[0].push_back(line);
         }
 
         // Read cookies
         while (getline(file, line) && !line.empty()){
-            if (line.empty()) break;
             data[1].push_back(line);
         }
 
         // Read employees
         while (getline(file, line) && !line.empty()){
-            if (line.empty()) break;
             data[2].push_back(line);
         }
 
@@ -98,7 +95,7 @@ int main (){
         cout << "Cookie batches total: " << dept.second[1].size() << "\n";
         cout << "Employees: " << dept.second[2].size() << "\n";
         cout << "Items in stock: " << dept.second[0].size() << "\n";
-        cout << "-------------------------";
+        cout << "-------------------------\n";
     }
     // End of main function and simulation of the factory
     cout << "\nEnd of simulation after 25 cycles!\n\n";
@@ -116,7 +113,7 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
         cout << "\n\n ---- Factory Cycle " << i << " ----\n";
 
         for (auto &dept : factory){
-            int event = rand() % 11; // Picks a random event (0-10)
+            int event = rand() % 12; // Picks a random event (0-11)
 
             switch (event){
                 case 0: // New cookie batch produced
@@ -168,6 +165,9 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
                     break;
                 case 10: // Product defect
                 cout << "There has been a defective product in the " << dept.first << " department.\n";
+                    break;
+                case 11: // Maintenance
+                cout << "Maintenance was performed in the Baking department. All machinery is functional!\n";
                     break;
             }
         }
