@@ -67,15 +67,15 @@ int main (){
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
         cout << "\nDepartment: " << dept.first << "\n";
-        cout << " Items: " << setw (10);
+        cout << " Items:" << "(" << dept.second[0].size() << ")" << setw (12);
         for (const auto &ing : dept.second[0]){
             cout << ing << " " ;
         }
-        cout << "\n Cookies: " << setw (12);
+        cout << "\n Cookies:" << "(" << dept.second[1].size() << ")" << setw (14);
         for (const auto &cook : dept.second[1]){
             cout << cook << " ";
         }
-        cout << "\n Employees: " << setw (7);
+        cout << "\n Employees:" << "(" << dept.second[2].size() << ")" << setw (9);
         for (const auto &emp : dept.second[2]){
             cout << emp << " ";
         }
@@ -159,7 +159,7 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
                 cout << "A supplier had an issue with delivery to the " << dept.first << " department.\n";
                     break;
                 case 8: // Regulation check
-                cout << "A  regulation check is done in the " << dept.first << " department. Everything is up to standard.\n";
+                cout << "A regulation check is done in the " << dept.first << " department. Everything is up to standard.\n";
                     break;
                 case 9: // Stock check
                 cout << "Stock has been checked in the " << dept.first << " department. Everything is accounted for.\n";

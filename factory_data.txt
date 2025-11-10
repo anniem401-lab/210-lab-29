@@ -19,7 +19,8 @@ semi-sweet choco,
 milk choco,
 white choco,
 ruby choco,
-dairy-free choco.
+dairy-free choco,
+shortbread.
 
 baker1,
 baker2,
@@ -45,7 +46,8 @@ semi-sweet choco,
 milk choco,
 white choco,
 ruby choco,
-dairy-free choco.
+dairy-free choco,
+shortbread.
 
 packer1,
 packer2,
@@ -68,7 +70,8 @@ semi-sweet choco,
 milk choco,
 white choco,
 ruby choco,
-dairy-free choco.
+dairy-free choco,
+shortbread.
 
 clerk1,
 clerk2,
