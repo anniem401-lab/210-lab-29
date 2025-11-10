@@ -5,38 +5,53 @@ eggs,
 butter,
 oil,
 salt,
-dark choco-chips,
-semi-sweet choco-chips,
-milk choco-chips,
-white choco-chips,
-ruby choco-chips,
-dairy-free choco-chips,
+dark chocochips,
+semi-sweet chocochips,
+milk chocochips,
+white chocochips,
+ruby chocochips,
+dairy-free chocochips,
 baking soda,
 vanilla extract.
 
-chocolate-chip
+dark choco,
+semi-sweet choco,
+milk choco,
+white choco,
+ruby choco,
+dairy-free choco.
 
-baker1
-baker2
-baker3
-baker4
-baker5
+baker1,
+baker2,
+baker3,
+baker4,
+baker5.
 
 Packaging
-boxes
-tape
-wrappers
-cardboard
-bubblewrap
-packing peanuts
+boxes,
+tape,
+wrappers,
+cardboard,
+bubble-wrap,
+packing peanuts,
+parchment paper,
+tins,
+wrappers,
+cartons,
+air pillows.
 
-chocolate-chip
+dark choco,
+semi-sweet choco,
+milk choco,
+white choco,
+ruby choco,
+dairy-free choco.
 
-packer1
-packer2
-packer3
-packer4
-packer5
+packer1,
+packer2,
+packer3,
+packer4,
+packer5.
 
 Sales
 labels,
@@ -45,13 +60,18 @@ tags,
 stickers,
 brochures,
 product guide,
-promotional bags,
-promotional mugs,
+promo bags,
+promo mugs.
 
-chocolate-chip
+dark choco,
+semi-sweet choco,
+milk choco,
+white choco,
+ruby choco,
+dairy-free choco.
 
-clerk1
-clerk2
-clerk3
-clerk4
-clerk5
+clerk1,
+clerk2,
+clerk3,
+clerk4,
+clerk5.
