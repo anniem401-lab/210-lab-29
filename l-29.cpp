@@ -13,7 +13,7 @@
 #include <ctime>
 using namespace std;
 
-// A function defined to simulate a factory changing each production cycle
+// A function defined to simulate a small factory changing each production cycle
 // Parameters: map of departments, number of intervals
 // Function prototype
 void factory_sim(map<string, array<list<string>, 3>> &factory, int interval);
@@ -62,41 +62,42 @@ int main (){
     }
     //cout << "File has been read and will now close...\n\n";
     file.close();
-
+    cout << "\n====================================================";
     cout << "\n** Initial Factory Stats **\n";
+    cout << "====================================================\n";
     // Will out put three departments: baking, packaging, sales
     for (const auto &dept : factory){
         cout << "\nDepartment: " << dept.first << "\n";
-        cout << " Items:" << "(" << dept.second[0].size() << ")" << setw (12);
+        cout << " Stock" << "(" << dept.second[0].size() << "):" << setw (11);
         for (const auto &ing : dept.second[0]){
             cout << ing << " " ;
         }
-        cout << "\n Cookies:" << "(" << dept.second[1].size() << ")" << setw (14);
+        cout << "\n Cookies" << "(" << dept.second[1].size() << "):" << setw (15);
         for (const auto &cook : dept.second[1]){
             cout << cook << " ";
         }
-        cout << "\n Employees:" << "(" << dept.second[2].size() << ")" << setw (9);
+        cout << "\n Employees" << "(" << dept.second[2].size() << "):" << setw (9);
         for (const auto &emp : dept.second[2]){
             cout << emp << " ";
         }
         cout << "\n---------------------------------------------\n";
-    } //setw (5)
+    }
 
     // Time-based simulation for factory starts
     // For 25 intervals, interate through each department in the map and simulate changes
     factory_sim(factory, 25);
-    cout << "\n====================================================" << endl;
-
     
     // Random events that may impact the factory during simulation which are defined in factory_sim:
     // Hired/fired worker, new cookie batches, change in stock, cookies packed, etc...
     // New factory stats are outputted at the end of each interval.
+    cout << "\n====================================================";
     cout << "\n** New Factory Stats **\n";
+    cout << "====================================================" << endl;
     for (const auto &dept : factory){
         cout << "\nDepartment: " << dept.first << "\n";
-        cout << "Cookies produced: " << dept.second[1].size() << "\n";
+        cout << "Cookie batches total: " << dept.second[1].size() << "\n";
         cout << "Employees: " << dept.second[2].size() << "\n";
-        cout << "Item stock: " << dept.second[0].size() << "\n";
+        cout << "Items in stock: " << dept.second[0].size() << "\n";
         cout << "-------------------------";
     }
     // End of main function and simulation of the factory
@@ -109,9 +110,10 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
     // void program defining the factory 
     // The random events occur in the factory and intervals are counted until 25 is reached.
     cout << "\n====================================================" << endl;
-    cout << "\n** Simulating 25 Factory Cycles **";
+    cout << "** Simulating 25 Factory Cycles **";
+    cout << "\n====================================================";
     for (int i = 1; i <= interval; ++i){
-        cout << "\n\n --- Factory Cycle " << i << " ---\n";
+        cout << "\n\n ---- Factory Cycle " << i << " ----\n";
 
         for (auto &dept : factory){
             int event = rand() % 11; // Picks a random event (0-10)
@@ -153,19 +155,19 @@ void factory_sim(map<string, array<list<string>, 3>> &factory, int interval){
                 cout << "Random inspection in " << dept.first << " department. All good!\n";
                     break;
                 case 6: // Error in department
-                cout << "A minor error has occured in the " << dept.first << " department. Issue quickly resolved after.\n";
+                cout << "A minor error has occured in the " << dept.first << " department. Issue quickly resolved.\n";
                     break;
                 case 7: // Supply issue
                 cout << "A supplier had an issue with delivery to the " << dept.first << " department.\n";
                     break;
                 case 8: // Regulation check
-                cout << "A regulation check is done in the " << dept.first << " department. Everything is up to standard.\n";
+                cout << "A regulation check's done in the " << dept.first << " department. It's all up to standard.\n";
                     break;
                 case 9: // Stock check
-                cout << "Stock has been checked in the " << dept.first << " department. Everything is accounted for.\n";
+                cout << "Stock's checked in the " << dept.first << " department. Everything's accounted for.\n";
                     break;
                 case 10: // Product defect
-                cout << "There has been a defective product in the " << dept.first << " department\n";
+                cout << "There has been a defective product in the " << dept.first << " department.\n";
                     break;
             }
         }
